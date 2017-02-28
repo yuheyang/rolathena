@@ -1,0 +1,10 @@
+#for test only!
+#Wed Aug 05 16:52:51 CST 2015
+jco.client.lang=ZH
+jco.destination.peak_limit=10
+jco.client.client=700
+jco.client.passwd=sap20000
+jco.client.user=admin
+jco.client.sysnr=00
+jco.destination.pool_capacity=3
+jco.client.ashost=192.168.251.4

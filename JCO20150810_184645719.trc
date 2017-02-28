@@ -1,0 +1,39 @@
+﻿main [18:46:45:720]: ********************  Mon Aug 10 18:46:45 CST 2015   ***************************         
+main [18:46:45:720]: SAP Java Connector (JCo) runtime information         
+main [18:46:45:720]: Java Runtime:
+main [18:46:45:721]: 	Operating System     : Windows 7 6.1 for x86         
+main [18:46:45:721]: 	Java VM              : 1.7.0_45 Oracle Corporation         
+main [18:46:45:721]: 	Java Codepage        : GBK         
+main [18:46:45:721]: Versions:
+main [18:46:45:721]: 	JCo API               : 3.0.1 (2008-10-21)         
+main [18:46:45:721]: 	JCo middleware name   : JavaRfc         
+main [18:46:45:721]: 	JCo middleware        : 2.1.1         
+main [18:46:45:722]: 	JCo middleware native : not available         
+main [18:46:45:722]: 	JCo library           : not loaded, caused by java.lang.UnsatisfiedLinkError: no sapjco3 in java.library.path         
+main [18:46:45:722]:                                                                                                 
+main [18:46:45:722]: ********************    Configuration     ***************************
+	jco.jdsr_provider = 0
+	jco.cpic_keep_alive_timeout = 10
+	jco.jdsr = 0
+	jco.ignore_jdsr_error = 1
+	jco.jarm = 0
+	jco.trace_level = 1
+	jco.trace_path = .
+
+
+main [18:46:45:722]: *********************************************************************
+main [18:46:45:722]: Exception during reading of the system property: jco.cpic_keep_alive_period=300 java.lang.NoClassDefFoundError: Could not initialize class com.sap.conn.rfc.driver.CpicDriver
+	at com.sap.conn.rfc.engine.DefaultRfcRuntime.setupRegKeepAlive(DefaultRfcRuntime.java:124)
+	at com.sap.conn.jco.rt.JCoRuntime.setPropertyValue(JCoRuntime.java:787)
+	at com.sap.conn.jco.rt.JCoRuntime.setSystemProperty(JCoRuntime.java:130)
+	at com.sap.conn.jco.rt.JCoRuntime.readSystemProperties(JCoRuntime.java:161)
+	at com.sap.conn.jco.rt.JCoRuntimeFactory.<clinit>(JCoRuntimeFactory.java:24)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:190)
+	at com.sap.conn.jco.JCo.createJCo(JCo.java:51)
+	at com.sap.conn.jco.JCo.<clinit>(JCo.java:25)
+	at com.sap.conn.jco.JCoDestinationManager.getDestination(JCoDestinationManager.java:61)
+	at com.chlitina.o2o.sap.rfc.ConnectSAPServer.Connect(ConnectSAPServer.java:49)
+	at com.chlitina.o2o.service.BalanceService.createSOOrder(BalanceService.java:62)
+	at com.chlitina.o2o.test.Test.main(Test.java:33)
+

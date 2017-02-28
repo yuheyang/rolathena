@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<!-- 这里的namespace名字必须为执行该sql的dao地址  -->  
+<mapper namespace="com.dao.IUserDao">  
+
+	<!--  非常复杂的结果映射  -->
+	<resultMap id="detailedBlogResultMap" type="Blog">
+		<constructor>
+			<idArg column="blog_id" javaType="int"/>
+		</constructor>
+		<result property="title" column="blog_title"/>
+		<association property="author" column="blog_author_id" javaType="Author">
+			<id property="id" column="author_id"/>
+			<result property="username" column="author_username"/>
+			<result property="password" column="author_password"/>
+			<result property="email" column="author_email"/>
+			<result property="bio" column="author_bio"/>
+			<result property="favouriteSection" column="author_favourite_section"/>
+		</association>
+		<collection property="posts" ofType="Post">
+			<id property="id" column="post_id"/>
+			<result property="subject" column="post_subject"/>
+			<association property="author" column="post_author_id"  javaType="Author"/>
+			<collection property="comments" column="post_id" ofType=" Comment">
+				<id property="id" column="comment_id"/>  
+			</collection>
+			<collection property="tags" column="post_id" ofType=" Tag" >
+				<id property="id" column="tag_id"/>
+			</collection>
+			<discriminator javaType="int" column="draft">
+				<case value="1" resultType="DraftPost"/>
+			</discriminator>
+		</collection>
+	</resultMap>
+
+    <resultMap type="com.entity.UserEntity" id="userResultMap">    
+        <id property="userID" column="id"/>    
+        <result property="userPWD" column="pwd"/>    
+        <result property="userName" column="name"/>    
+        <result property="userBirthday" column="birthday"/>  
+        <result property="userSalary" column="salary"/>  
+    </resultMap>  
+       
+    <select id="getUser" parameterType="String" resultType="com.entity.UserEntity" resultMap="userResultMap">    
+        <![CDATA[  
+            SELECT * FROM MYUSER 
+            WHERE ID =  #{userID} 
+        ]]>     
+    </select>  
+      
+    <insert id="insertUser" parameterType="com.entity.UserEntity">  
+            INSERT INTO MYUSER(ID,PWD,NAME,BIRTHDAY,SALARY)  
+             VALUES(  
+                #{userID},  
+                #{userPWD},  
+                #{userName},  
+                #{userBirthday},  
+                #{userSalary}  
+             )  
+    </insert>  
+  
+</mapper>  

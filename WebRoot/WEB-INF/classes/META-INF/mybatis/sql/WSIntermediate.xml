@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.chlitina.o2o.mapper.WSIntermediateMapper">  
+	
+    <resultMap type="com.chlitina.o2o.entity.impl.MaterialMasterImpl" id="materialMasterMap">    
+        <id property="matnr" column="MATNR"/>    
+        <result property="mktxt" column="MKTXT"/>    
+        <result property="shortname" column="SHORTNAME"/>    
+        <result property="country" column="COUNTRY"/>  
+        <result property="priceGroup" column="PRICE_GROUP"/>  
+        <result property="price" column="PRICE"/>
+        <result property="bvAmount" column="BV_AMOUNT"/>  
+        <result property="unit" column="UNIT"/>  
+		<result property="minQty" column="MIN_QTY"/>  
+		<result property="isPresent" column="IS_PRESENT"/>  
+		<result property="cateId" column="CATE_ID"/>  
+		<result property="cateName" column="CATE_NAME"/>  
+		<result property="seriesId" column="SERIES_ID"/>  
+		<result property="seriesName" column="SERIES_NAME"/>  
+		<result property="subseriesId" column="SUBSERIES_ID"/>  
+		<result property="subseriesName" column="SUBSERIES_NAME"/>  
+		<result property="upDownStat" column="UP_DOWN_STAT"/>  
+		<result property="remark" column="REMARK"/>  
+		<result property="facPrice" column="FAC_PRICE"/>  
+		<result property="lowPrice" column="LOW_PRICE"/>  
+		<result property="readFlag" column="READ_FLAG"/>  
+		<result property="loevm" column="LOEVM"/>  
+		<result property="vmsta" column="VMSTA"/>  
+    </resultMap>  
+ 
+    <resultMap type="com.chlitina.o2o.entity.impl.CustMasterImpl" id="custMasterMap">    
+        <id property="kunnr" column="KUNNR"/>    
+        <result property="name1" column="NAME1"/>    
+        <result property="sex" column="SEX"/>    
+        <result property="custAdd002" column="CUST_ADD_002"/>  
+        <result property="custAdd003" column="CUST_ADD_003"/>  
+        <result property="custTypeCode" column="CUST_TYPE_CODE"/>
+        <result property="custTypeDes" column="CUST_TYPE_DES"/>  
+        <result property="custLevel" column="CUST_LEVEL"/>  
+		<result property="regionCode" column="REGION_CODE"/>  
+		<result property="regionName" column="REGION_NAME"/>  
+		<result property="cityCode" column="CITY_CODE"/>  
+		<result property="cityName" column="CITY_NAME"/>  
+		<result property="areaCode" column="AREA_CODE"/>  
+		<result property="areaName" column="AREA_NAME"/>  
+		<result property="corpName" column="CORP_NAME"/>  
+		<result property="corpDeputy" column="CORP_DEPUTY"/>  
+		<result property="corpDeputyId" column="CORP_DEPUTY_ID"/>  
+		<result property="kAddr" column="K_ADDR"/>  
+		<result property="kAddrPost" column="K_ADDR_POST"/>  
+		<result property="mobileTel" column="MOBILE_TEL"/>  
+		<result property="telf1" column="TELF1"/>  
+		<result property="telfx" column="TELFX"/>  
+		<result property="custAdd040" column="CUST_ADD_040"/>  
+		<result property="custAdd039" column="CUST_ADD_039"/>  
+		<result property="joinDate" column="JOIN_DATE"/>  
+		<result property="levelupDate" column="LEVELUP_DATE"/>  
+		<result property="rdDate" column="RD_DATE"/>  
+		<result property="adDate" column="AD_DATE"/>  
+		<result property="smDate" column="SM_DATE"/>  
+		<result property="jmDate" column="JM_DATE"/>  
+		<result property="freeTrainQuata" column="FREE_TRAIN_QUATA"/>  
+		<result property="fieldTrainQuata" column="FIELD_TRAIN_QUATA"/>  
+		<result property="smtpAddr" column="SMTP_ADDR"/>  
+		<result property="supervise" column="SUPERVISE"/>  
+		<result property="superviseCode" column="SUPERVISE_CODE"/>  
+		<result property="cancelDate" column="CANCEL_DATE"/>  
+		<result property="sailTrainQuata" column="SAIL_TRAIN_QUATA"/> 
+		<result property="freezeDate" column="FREEZE_DATE"/> 
+		<result property="topCommend" column="TOP_COMMEND"/> 
+		<result property="topCommendId" column="TOP_COMMEND_ID"/> 
+		<result property="consultFee" column="CONSULT_FEE"/> 
+		<result property="consultName" column="CONSULT_NAME"/> 
+		<result property="consultDate" column="CONSULT_DATE"/> 
+		<result property="bank" column="BANK"/> 
+		<result property="bankNo" column="BANK_NO"/> 
+		<result property="coBank" column="CO_BANK"/> 
+		<result property="coBankNo" column="CO_BANK_NO"/> 
+		<result property="bnId" column="BN_ID"/> 
+		<result property="kkber" column="KKBER"/> 
+		<result property="readFlag" column="READ_FLAG"/> 
+		<result property="cdate" column="CDATE"/> 
+		<result property="loevm" column="LOEVM"/> 
+		<result property="shipToParty" column="SHIP_TO_PARTY"/> 
+		<result property="memberType" column="MEMBER_TYPE"/> 
+		<result property="bzirk" column="BZIRK"/> 
+		<result property="bztxt" column="BZTXT"/> 
+		<result property="kunn21" column="KUNN2_1"/> 
+		<result property="kunn22" column="KUNN2_2"/> 
+		<result property="name11" column="NAME1_1"/> 
+		<result property="name12" column="NAME1_2"/> 
+    </resultMap>   
+
+    <resultMap type="com.chlitina.o2o.entity.impl.StoreMonBonusImpl" id="storeMonBonusMap">
+        <result property="bonusMon" column="BONUS_MON"/>    
+        <result property="bonusYear" column="BONUS_YEAR"/>    
+        <result property="memberBonus" column="MEMBER_BONUS"/>  
+        <result property="memberId" column="MEMBER_ID"/>  
+        <result property="memberJf" column="MEMBER_JF"/>
+        <result property="memberLevel" column="MEMBER_LEVEL"/>  
+        <result property="teamJf" column="TEAM_JF"/>  
+        <result property="o2oTeamBonus" column="O2O_TEAM_BONUS"/>  
+        <result property="o2oSaleBonus" column="O2O_SALE_BONUS"/>  
+        <result property="o2oJF" column="O2O_JF"/>  
+        <result property="bonusDis" column="BONUS_DIS"/>  
+        <result property="nextBonus" column="next_bonus"/>
+    </resultMap>  
+
+    <resultMap type="com.chlitina.o2o.entity.impl.StoreMonBonusSecImpl" id="storeMonBonusSecMap">
+        <result property="dnMoney" column="DN_MONEY"/>    
+        <result property="memberBonus" column="MEMBER_BONUS"/>    
+        <result property="memberId" column="MEMBER_ID"/>  
+        <result property="period" column="PERIOD"/>
+    </resultMap>  
+
+    <resultMap type="com.chlitina.o2o.entity.impl.StoreBonusDefineImpl" id="storeBonusDefineMap">
+        <result property="bonusMonth" column="BONUS_MONTH"/>    
+        <result property="bonusYear" column="BONUS_YEAR"/>    
+        <result property="businessType" column="BUSINESS_TYPE"/>  
+        <result property="commendJmd" column="COMMEND_JMD"/>
+        <result property="commendZxs" column="COMMEND_ZXS"/>
+        <result property="isReal" column="IS_REAL"/>
+        <result property="memberType" column="MEMBER_TYPE"/>
+        <result property="orderCode" column="ORDER_CODE"/>
+        <result property="org" column="ORG"/>
+        <result property="sumJf" column="SUM_JF"/>
+        <result property="sumMon" column="SUM_MON"/>
+        <result property="version" column="VERSION"/>
+        <result property="zxsBonus" column="ZXS_BONUS"/>
+        <result property="zxsCode" column="ZXS_CODE"/>
+        <result property="zxsId" column="ZXS_ID"/>
+        <result property="zxsName" column="ZXS_NAME"/>
+    </resultMap>  
+ 
+     <resultMap type="com.chlitina.o2o.entity.impl.OrderHeaderImpl" id="ordersMap">
+     	<id property="vbeln" column="VBELN"/>
+        <result property="auart" column="AUART"/>    
+        <result property="cdate" column="CDATE"/>    
+        <result property="docStatus" column="DOC_STATUS"/>  
+        <result property="kunnr" column="KUNNR"/>
+        <result property="memberLevel" column="MEMBER_LEVEL"/>
+        <result property="name1" column="NAME1"/>
+        <result property="orderHdExpl" column="ORDER_HD_EXPL"/>
+        <result property="orderTpName" column="ORDER_TP_NAME"/>
+        <result property="orgName" column="ORG_NAME"/>
+        <result property="readFlag" column="READ_FLAG"/>
+        <result property="saleDate" column="SALE_DATE"/>
+        <result property="saleDistrict" column="SALE_DISTRICT"/>
+        <result property="salePeriod" column="SALE_PERIOD"/>
+        <result property="sdate" column="SDATE"/>
+        <result property="sumBv" column="SUM_BV"/>
+        <result property="sumMoney" column="SUM_MONEY"/>
+        <result property="vkorg" column="VKORG"/>
+        <collection property="orderItems" ofType="com.chlitina.o2o.entity.impl.OrderItemImpl">
+			<result property="vbeln" column="vbeln"/>
+			<result property="isPersent" column="IS_PERSENT"/>
+			<result property="itemJf" column="ITEM_JF"/>
+			<result property="itemMoney" column="ITEM_MONEY"/>
+			<result property="itemName" column="ITEM_NAME"/>
+			<result property="itemQty" column="ITEM_QTY"/>
+			<result property="matnr" column="MATNR"/>
+			<result property="perJf" column="PER_JF"/>
+			<result property="perMoney" column="PER_MONEY"/>
+			<result property="posnr" column="POSNR"/>
+		</collection>
+    </resultMap>
+    
+    <resultMap type="com.chlitina.o2o.entity.impl.OrderHeaderMonImpl" id="monOrdersMap">
+     	<id property="vbeln" column="VBELN"/>
+     	<result property="auart" column="AUART"/>
+        <result property="zzcperi" column="ZZCPERI"/>
+        <result property="kunnr" column="KUNNR"/>
+        <result property="memberLevel" column="MEMBER_LEVEL"/>
+        <result property="name1" column="NAME1"/>
+        <result property="orderHdExpl" column="ORDER_HD_EXPL"/>
+        <result property="orderTpName" column="ORDER_TP_NAME"/>
+        <result property="orgName" column="ORG_NAME"/>
+        <result property="readFlag" column="READ_FLAG"/>
+        <result property="saleDate" column="SALE_DATE"/>
+        <result property="saleDistrict" column="SALE_DISTRICT"/>
+        <result property="salePeriod" column="SALE_PERIOD"/>
+        <result property="sumBv" column="SUM_BV"/>
+        <result property="sumMoney" column="SUM_MONEY"/>
+        <result property="vkorg" column="VKORG"/>
+        <collection property="items" ofType="com.chlitina.o2o.entity.impl.OrderItemMonImpl">
+			<result property="isPersent" column="IS_PERSENT"/>
+			<result property="itemJf" column="ITEM_JF"/>
+			<result property="itemMoney" column="ITEM_MONEY"/>
+			<result property="itemName" column="ITEM_NAME"/>
+			<result property="itemQty" column="ITEM_QTY"/>
+			<result property="matnr" column="MATNR"/>
+			<result property="perJf" column="PER_JF"/>
+			<result property="perMoney" column="PER_MONEY"/>
+			<result property="vbeln" column="vbeln"/>
+			<result property="zzcperi" column="ZZCPERI"/>
+		</collection>
+    </resultMap>
+       
+    <!-- 查询学生，根据id -->  
+    <select id="getMaterialMaster" parameterType="Map" resultType="com.chlitina.o2o.entity.impl.MaterialMasterImpl" resultMap="materialMasterMap">  
+        <![CDATA[  
+        	select * from  (
+        		select rownum as rowno, t.* from zsdss_material_master t where rownum<= ${rowend} ) a 
+        	where a.rowno > ${rowstart}
+        ]]>    
+    </select>  
+
+    <select id="getMaterialMasterCount" resultType="int">  
+        <![CDATA[  
+        	select count(*) from zsdss_material_master where  LOEVM <> 'X' 
+        ]]>    
+    </select>
+    
+    <select id="getCustMaster" parameterType="Map" resultType="com.chlitina.o2o.entity.impl.CustMasterImpl" resultMap="custMasterMap">  
+        <![CDATA[  
+			select * from  (
+				select rownum as rowno, t.* from ZSDSS_CUST_MASTER t where  rownum < ${rowend})  a 
+			where a.rowno >= ${rowstart}
+        ]]>    
+    </select>
+    
+    <select id="getStoreMonBonus" parameterType="Map" resultType="com.chlitina.o2o.entity.impl.StoreMonBonusImpl" resultMap="storeMonBonusMap">  
+        <![CDATA[  
+			select * from  (
+    			select rownum as rowno, t.* from T_DX_MON_BONUS t where BONUS_YEAR=#{year} and BONUS_MON=#{mon} and rownum<= ${rowend})  a 
+    		where a.rowno > ${rowstart}
+        ]]>    
+    </select>
+    
+    <select id="getStoreMonBonusSec" parameterType="Map" resultType="com.chlitina.o2o.entity.impl.StoreMonBonusSecImpl" resultMap="storeMonBonusSecMap">  
+        <![CDATA[  
+        	select * from  (
+        		select rownum as rowno, t.* from T_DX_MON_BONUS_2 t where PERIOD = #{period} and rownum<= ${rowend})  a 
+        	where a.rowno> ${rowstart}
+        ]]>    
+    </select>
+    
+    <select id="getStoreBonusDefine" parameterType="Map" resultType="com.chlitina.o2o.entity.impl.StoreBonusDefineImpl" resultMap="storeBonusDefineMap">  
+        <![CDATA[  
+        	select * from  (
+    			select rownum as rowno, t.* from T_O2O_BONUS_DEFINE t where BONUS_YEAR=${year} and BONUS_MONTH=${mon} and rownum<= ${rowend}) a 
+    		where a.rowno > ${rowstart}
+        ]]>    
+    </select>
+    
+    <select id="getOrdersByDay" parameterType="Map" resultType="com.chlitina.o2o.entity.impl.OrderHeaderImpl" resultMap="ordersMap">  
+        <![CDATA[  
+        	select * from (
+        		select * from  (
+                	select rownum as rowno, t.* from zsdss_order_header t 
+                	where CDATE = ${cdate} and vkorg<> '1051'  and rownum<= ${rowend}) a 
+        		where a.rowno > ${rowstart}) temp,  zsdss_order_item i 
+			where temp.vbeln=i.vbeln
+        ]]>    
+    </select>
+    
+    <select id="getOrdersByMon" parameterType="Map" resultType="com.chlitina.o2o.entity.impl.OrderHeaderMonImpl" resultMap="monOrdersMap">
+        <![CDATA[  
+        	select * from (
+        		select * from  (
+                	select rownum as rowno, t.* from zsdss_order_header_mon t 
+                	where rownum<= ${rowend}) a where a.rowno > ${rowstart}) temp,  zsdss_order_item_mon i 
+			where temp.vbeln=i.vbeln
+        ]]>    
+    </select>
+    
+    <select id="getOrderHeadersByDay" parameterType="Map" resultType="com.chlitina.o2o.entity.impl.OrderHeaderImpl">  
+        <![CDATA[  
+        	select * from  (
+				select rownum as rowno, t.* from zsdss_order_header t where CDATE = #{cdate} and vkorg<> '1051' and rownum<= ${rowend}) a 
+			where a.rowno > ${rowstart}
+        ]]>    
+    </select>
+    
+    <select id="getAreaBonusByDay" parameterType="Map" resultType="com.chlitina.o2o.entity.impl.AreaBonusImpl">  
+        <![CDATA[  
+        	select * from  (
+				select rownum as rowno, t.* from ZSSDR002 t where DATUM = #{querydate} and rownum<= ${rowend}) a 
+			where a.rowno > ${rowstart}
+        ]]>    
+    </select>
+    
+    <select id="getOrderItemsById" parameterType="String" resultType="com.chlitina.o2o.entity.impl.OrderItemImpl">  
+        <![CDATA[  
+        	select rownum as rowno, t.* from zsdss_order_item t where vbeln in ( ${vbelnstring} ) order by vbeln
+        ]]>    
+    </select>
+    
+    <select id="getProductReportByDay" parameterType="String" resultType="com.chlitina.o2o.entity.impl.ProductReportImpl">  
+        <![CDATA[  
+        	select * from  (
+				select rownum as rowno, t.* from zva05 t where audat = #{querydate} and rownum<= ${rowend}) a 
+			where a.rowno > ${rowstart}
+        ]]>  
+    </select>
+</mapper>  
